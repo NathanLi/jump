@@ -28,12 +28,10 @@ export class Player extends cc.Component {
     private jumpAudioId = -1;
 
     onLoad() {
-        cc.find("title",this.node).active = false;
     }
 
     public readyJump() {
         this.readyJumpAudioId =  cc.audioEngine.play(this.readyJumpAudio,false,1);
-        cc.find("title",this.node).active = true;
         cc.find("rotateAnchor/sprite",this.node).runAction(cc.scaleTo(2,1,0.5));
         this.speed = this.initSpeed;
         this.isReadyJump = true;
